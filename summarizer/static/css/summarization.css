@@ -1,0 +1,43 @@
+.input-group-container{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+
+.para-input, .para-input[type=text]:focus{
+    height: 650px;
+    width: 250px !important;
+    margin-right: 25px;
+    background-color: #EAFDCF;
+    box-shadow: -24px 24px 4px #263238;
+    border: none;
+}
+
+.doc-upload-container{
+    background-color: #EAFDCF;
+    height: 650px;
+    width: 150ox;
+    border-radius: 5px;
+    box-shadow: 4px 4px 4px #676969;
+}
+
+.drop-section{
+position: absolute;
+width: 535px;
+height: 300px;
+/* left: 1204px;
+top: 915px; */
+
+background: #FFFFFF;
+border-radius: 10px;
+text-align: center;
+align-self: center;
+transform: translateY(50%);
+
+
+}
+
+.drop-section > h2{
+
+padding: 80px 0px;
+}
