@@ -3,11 +3,69 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  height: 40vh;
+  height: 45vh;
   /* background: rgba(108, 106, 106, 0.68);
   backdrop-filter: blur(20px); */
 }
 #blur {
-  background: rgba(128, 124, 124, 0.68);
-  backdrop-filter: blur(10px);
+  background: rgba(165, 161, 161, 0.68);
+  backdrop-filter: blur(2px);
+  height: 40vh;
+}
+.col-lg-6 img {
+  width: 70%;
+}
+.col-xs-12 > img {
+  width: 75%;
+}
+.col-xs-12 > button {
+  width: 35%;
+  height: 7vh;
+  border-radius: 10px;
+  background-color: #fff;
+  color: black;
+  font-size: 1.3rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+}
+.col-xs-12 > h3 {
+  font-family: "Quicksand", sans-serif;
+  font-size: 2.3rem;
+  font-weight: 700;
+  color: #fff;
+}
+#titlecont {
+  font-family: "Quicksand", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #fff;
+}
+.col-xs-12 > h1 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+  font-size: 2.8rem;
+  letter-spacing: 0.1;
+  color: #39603d;
+}
+.col-xs-12 > p {
+  font-size: 1.1rem;
+  color: #3c403d;
+  font-weight: 400;
+  font-family: "Montserrat", sans-serif;
+}
+
+@media screen and (max-width: 767px) {
+  .col-xs-12 > h3 {
+    font-size: 1.6rem;
+    margin: 0;
+  }
+  #titlecont {
+    font-size: 1rem;
+    padding: 0;
+  }
+  .col-xs-12 > button{
+      width: 60%;
+  }
+  
+  
 }
