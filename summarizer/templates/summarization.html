@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block pgcss %} <link rel="stylesheet" href="{% static 'css/summarization.css' %}" type="text/css" /> {% endblock pgcss %}
+
+{% block content %}
+<div class="container  d-flex justify-content-around flex-row input-group-container">
+    
+    <div class="input-group">
+        <textarea type="text" class="form-control para-input" aria-label="With textarea" placeholder="Add the text you want to summarize"></textarea>
+    </div>
+    
+    <div class="container d-flex flex-column align-items-center doc-upload-container">
+        <h4>Upload your document</h4>
+        <p>.pdf</p>
+        <input type="file">
+
+        <div class="drop-section">
+            <h2>Drop your file here <br/>or <span>browse</span></h2>
+        </div>
+    </div>
+
+</div>
+
+div.container
+
+{% endblock content %}
