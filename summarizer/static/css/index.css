@@ -3,14 +3,14 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  height: 50vh;
+  height: 60vh;
   /* background: rgba(108, 106, 106, 0.68);
   backdrop-filter: blur(20px); */
 }
 #blur {
   background: rgba(165, 161, 161, 0.68);
   backdrop-filter: blur(2px);
-  height: 43vh;
+  height: 51.5vh;
 }
 .col-lg-6 img {
   width: 70%;
@@ -18,8 +18,8 @@ body {
 .col-xs-12 > img {
   width: 75%;
 }
-.col-xs-12 > button {
-  width: 35%;
+.col-xs-12 > a {
+  width: 27%;
   height: 7vh;
   border-radius: 10px;
   background-color: #fff;
@@ -28,10 +28,13 @@ body {
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
 }
-button:hover, button:active{
-    background-color: black;
-    color: white;
-    border-radius: 10px;
+a:hover,
+a:active {
+  text-decoration: none;
+  /* text-transform: none; */
+  background-color: #263238 !important;
+  color: white !important;
+  border-radius: 10px;
 }
 
 .col-xs-12 > h3 {
@@ -69,9 +72,7 @@ button:hover, button:active{
     font-size: 1rem;
     padding: 0;
   }
-  .col-xs-12 > button{
-      width: 60%;
+  .col-xs-12 > a {
+    width: 60%;
   }
-  
-  
 }

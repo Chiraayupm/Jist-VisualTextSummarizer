@@ -4,24 +4,46 @@
 {% block pgcss %} <link rel="stylesheet" href="{% static 'css/summarization.css' %}" type="text/css" /> {% endblock pgcss %}
 
 {% block content %}
-<div class="container  d-flex justify-content-around flex-row input-group-container">
-    
-    <div class="input-group">
-        <textarea type="text" class="form-control para-input" aria-label="With textarea" placeholder="Add the text you want to summarize"></textarea>
-    </div>
-    
-    <div class="container d-flex flex-column align-items-center doc-upload-container">
-        <h4>Upload your document</h4>
-        <p>.pdf</p>
-        <input type="file">
 
-        <div class="drop-section">
-            <h2>Drop your file here <br/>or <span>browse</span></h2>
+<div class="container-fluid mt-5 mb-5">
+    <div class="row">
+        <div class="col-lg-6 col-xs-12">
+            <form action="">
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="15" placeholder="Add text that you want to summarize....."></textarea>
+                <a class="btn btn-secondary" type="submit" role="button">Summarize</a>
+            </form>
+        </div>
+        <div class="col-lg-6 col-xs-12">
+            <div class="container-fluid d-block">
+                <h3>Upload image, document here</h3>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <form class="d-block" action="">
+                            <input type="file">
+                            <a role="button" type="submit" class="btn btn-primary">Summarize</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-
+    <div class="row">
+        <div class="col-xs-6">
+            <h6>Your result</h6>  
+        </div>
+        <div class="col-xs-6">
+            <div class="btn-group" role="group" aria-label="Basic outlined example">
+                <button type="button" class="btn btn-outline-primary">Left</button>
+                <button type="button" class="btn btn-outline-primary">Right</button>
+            </div>
+        </div>
+        <div class="col-xs-12">
+            <div>
+                Canvas
+            </div>
+        </div>
+    </div>
 </div>
 
-div.container
 
 {% endblock content %}
