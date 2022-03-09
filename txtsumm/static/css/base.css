@@ -1,0 +1,14 @@
+/* css */
+nav {
+  background: rgba(165, 161, 161, 0.68) !important;
+  backdrop-filter: blur(2px);
+}
+.navbar-brand {
+  font-size: 2rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  /* vertical-align: middle; */
+  /* line-height: 1; */
+  /* text-align: center; */
+}
+
