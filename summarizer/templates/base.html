@@ -43,8 +43,23 @@
   </head>
 
   <body>
-    <h3>sfrhrighrifgrighrigrhgi</h3>
+    <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand mb-0 h1" href="#">Navbar</a> 
+        </div>
+    </nav>
+
     {% block content %}{% endblock content %} 
+    <footer class="navbar navbar-dark bg-dark d-flex">
+        <div class="container-fluid">
+            <a class="navbar-brand">Logo</a>
+        </div>
+        <div class="navbar-nav mb-2 mx-auto">
+            <p style="color: aliceblue;">Made with love</p>
+        </div>
+
+    </footer >
+
     {% block pgjs %}{% endblock pgjs %}
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
