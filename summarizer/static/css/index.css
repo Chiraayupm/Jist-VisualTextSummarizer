@@ -1,0 +1,13 @@
+body {
+  background-image: url("/static/assets/bgimg.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 40vh;
+  /* background: rgba(108, 106, 106, 0.68);
+  backdrop-filter: blur(20px); */
+}
+#blur {
+  background: rgba(128, 124, 124, 0.68);
+  backdrop-filter: blur(10px);
+}

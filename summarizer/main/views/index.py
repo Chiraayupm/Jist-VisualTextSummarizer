@@ -1,4 +1,4 @@
 from django.shortcuts import render, redirect
 
 def index(request):
-    return render(request, 'base.html')
+    return render(request, 'index.html')
