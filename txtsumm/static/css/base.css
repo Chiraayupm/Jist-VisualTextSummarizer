@@ -1,6 +1,6 @@
 /* css */
 nav {
-  background: rgba(165, 161, 161, 0.68) !important;
+  background: rgba(165, 161, 161, 0.68) ;
   backdrop-filter: blur(2px);
 }
 .navbar-brand {
@@ -10,5 +10,9 @@ nav {
   /* vertical-align: middle; */
   /* line-height: 1; */
   /* text-align: center; */
+}
+.blank-class{
+  background: none;
+  backdrop-filter: none;
 }
 

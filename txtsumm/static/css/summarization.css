@@ -1,0 +1,160 @@
+#textarea {
+    /* border: 1px solid red; */
+    width: 45%;
+    margin-right: 20px;
+    margin-left: 20px;
+    border: 1px solid white;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
+    /* border-radius: 10px; */
+  }
+  #textarea > form {
+    margin: 5px;
+    display: block;
+    justify-content: center;
+  }
+  #textarea > form > textarea {
+    border-radius: 10px;
+    width: 90%;
+  }
+  textarea:focus,
+  textarea::before {
+    outline: none;
+  }
+  #textarea > form > button {
+    display: flex;
+    align-self: center;
+    width: 45%;
+    background-color: #f8f1ca;
+    border-radius: 15px;
+    height: 6vh;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    border: 1px solid #f8f1ca;
+    box-shadow: 0px 5px 15px #f7ecb2;
+    /* text-align: center; */
+  }
+  #textarea > form > button > span {
+    margin-left: 75px;
+  }
+  
+  #upload {
+    /* border: 1px solid blue; */
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
+    border-radius: 10px;
+    width: 45%;
+    margin-left: 30px;
+    background-color: #f8f1ca;
+  }
+  #uploadcont > h3 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 800;
+  }
+  #uploadcont > p {
+    font-family: "Quicksand", sans-serif;
+    font-size: 1.1rem;
+    font-weight: 500;
+  }
+  .fileUpload {
+    position: relative;
+    overflow: hidden;
+    margin: 10px;
+  }
+  .fileUpload input.upload {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+  }
+  .fileUpload {
+    background-color: rgb(247, 205, 18);
+  }
+  form > #uploadFile {
+    font-family: "Quicksand", sans-serif;
+    font-size: 1.2rem;
+    font-weight: bolder;
+  }
+  form > .fileUpload {
+    width: 25%;
+    border: 1px solid rgb(247, 205, 18);
+    box-sizing: border-box;
+    box-shadow: 0px 1px 15px rgb(247, 205, 18);
+    /* text-align: center; */
+    display: flex;
+    text-align: center;
+    justify-items: center;
+  }
+  
+  form > .fileUpload > span {
+    margin-left: 34px;
+    font-family: 'Quicksand',sans-serif;
+    font-weight: 800;
+  }
+  
+  form > #b2 {
+    background-color: black;
+    border-radius: 15px;
+    width: 46%;
+    margin-top: 23%;
+    border: none;
+    color: #fff;
+    height: 6vh;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    border: 1px solid black;
+    box-shadow: 0px 1px 15px black;
+  }
+  #result {
+    display: inline-block;
+  }
+  #result > div > h6 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 800 !important;
+    font-size: 2.5rem;
+    
+  }
+  hr{
+      border: 5px solid rgb(233, 107, 4);
+      width: 20%;
+  }
+  .btn-group {
+    border: 1px solid white;
+    border-radius: 15px;
+    box-shadow: 0px 1px 15px #ccc;
+  }
+  #btn-l,
+  #btn-r {
+    border-radius: 15px;
+    font-size: 1.2rem;
+    font-family: "Quicksand", sans-serif;
+    font-weight: 500;
+  }
+  #btn-l:hover,
+  #btn-r:hover,
+  #btn-l:active,
+  #btn-r:active {
+    background-color: #263238;
+    border-radius: 15px;
+    color: rgb(226, 166, 2);
+    font-size: 1.2rem;
+    font-family: "Quicksand", sans-serif;
+    font-weight: 500;
+  }
+  #output{
+      border: 1px solid white;
+      padding: 5px;
+      box-shadow: 0px 1px 15px #ccc;
+      width: 100%;
+      height: 80vh;
+  }
+  
+  footer{
+      visibility: hidden !important;
+  }

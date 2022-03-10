@@ -8,7 +8,7 @@ def summarization(request):
     if request.method == "POST":
         paratxt = request.POST["paratxt"]
 
-        data_edges, data_nodes = ml_summmarizer(paratxt, "")
+        data_edges, data_nodes, result = ml_summmarizer(paratxt, "")
 
         new_data_edges = []
         new_data_nodes = []
@@ -26,7 +26,9 @@ def summarization(request):
 
         context = {
             "new_data_edges":new_data_edges,
-            "new_data_nodes":new_data_nodes
+            "new_data_nodes":new_data_nodes,
+            "result":result,
+            "return": "true"
         }
         # return JsonResponse(context)
         return render(request, 'summarization.html', context)
@@ -39,5 +41,25 @@ def summarize_pdf(request):
         print(para_pdf)
         para_pdf = ParaPdf.objects.create(pdf_file=para_pdf)
         print(para_pdf.pdf_file.url)
-        data_edges, data_nodes = ml_summmarizer("", para_pdf.pdf_file.url)
-    return render(request, 'summarization.html')
+        data_edges, data_nodes, result = ml_summmarizer("", para_pdf.pdf_file.url)
+        new_data_edges = []
+        new_data_nodes = []
+        for data_edge in data_edges:
+            new_data_edges.append({"key":data_edge["id"], "text":data_edge["label"]})
+        
+        for data_node in data_nodes:
+            new_data_nodes.append({"from":data_node["from"], "to":data_node["to"]})
+
+        # print(data_edges, data_nodes)
+        print("newww")
+        print(new_data_edges)
+        print("***")
+        print(new_data_nodes)
+
+        context = {
+            "new_data_edges":new_data_edges,
+            "new_data_nodes":new_data_nodes,
+            "result":result,
+            "return": "true"
+        }
+        return render(request, 'summarization.html', context)

@@ -10,7 +10,7 @@ body {
 #blur {
   background: rgba(165, 161, 161, 0.68);
   backdrop-filter: blur(2px);
-  height: 51.5vh;
+  height: 59vh;
 }
 .col-lg-6 img {
   width: 70%;

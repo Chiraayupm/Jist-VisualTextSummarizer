@@ -7,132 +7,184 @@
 
 <div class="container-fluid mt-5 mb-5">
     <div class="row">
-        <div class="col-lg-6 col-xs-12">
-            <form action="/summarization/" method="POST">
+        <div class="col-lg-6 col-xs-12" id="textarea">
+            <form action="/summarization/" class="d-block justify-content-center" method="POST">
                 {% csrf_token %}
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="15" placeholder="Add text that you want to summarize....." name="paratxt"></textarea>
-                <button class="btn btn-secondary" type="submit">Summarize</button>
+                <textarea class="form-control mx-auto mt-5" id="exampleFormControlTextarea1" rows="15" placeholder="Add text that you want to summarize....." name="paratxt"></textarea>
+                <button class="btn mx-auto mb-5 mt-5 " type="submit" role="button" id="txtsum"><span>Summarize</span></button>
             </form>
         </div>
-        <div class="col-lg-6 col-xs-12">
-            <div class="container-fluid d-block">
-                <h3>Upload image, document here</h3>
+        <div class="col-lg-6 col-xs-12" id="upload">
+            <div class="container-fluid d-block text-center mt-5" id="uploadcont">
+                <h3>Upload document here</h3>
+                <p>.pdf</p>
                 <div class="row">
                     <div class="col-xs-12">
                         <form class="d-block" action="/summarizationpdf/" method="POST" enctype="multipart/form-data">
                             {% csrf_token %}
-                            <input type="file" name="parapdf">
-                            <button type="submit" class="btn btn-primary">Summarize</button>
+                            <p id="uploadFile" placeholder="File Name here" class="mt-5 mb-5"disabled="disabled" >File Name</p>
+                            <div class="fileUpload btn mt-5 mx-auto align-self-center d-flex mb-5">
+                                <span>Upload</span>
+                                <input id="uploadBtn" type="file" class="upload" name="parapdf" />
+                            </div>
+                            <button type="submit" role="button" id="b2" cla5s="btn mt-4 mb-5">Summarize</button>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-xs-6">
-            <h6>Your result</h6>  
-        </div>
-        <div class="col-xs-6">
-            <div class="btn-group" role="group" aria-label="Basic outlined example">
-                <button type="button" class="btn btn-outline-primary">Left</button>
-                <button type="button" class="btn btn-outline-primary">Right</button>
+    <div class="row mt-5 mb-5 d-inline" id="result">
+        <div class="col-lg-12 col-xs-12 mt-5 mb-2">
+            <h6>Your result</h6> 
+            <hr> 
+        </div>`
+        <!-- <div class="col-lg-12 col-xs-12 d-flex justify-content-center">
+            <div class="btn-group mx-auto " role="group" aria-label="Basic outlined example">
+                <button type="button" id="btn-l" class="btn"><span class="iconify" data-icon="bi:file-text" style="color: rgb(226, 166, 2);" data-width="24" data-height="24"> </span> Summary</button>
+                <button type="button" id="btn-r" class="btn"><span class="iconify" data-icon="ph:graph" style="color: rgb(226, 166, 2);" data-width="24" data-height="24"></span> Graph</button>
             </div>
         </div>
-        <div class="col-xs-12">
+        <div class="col-xs-12 mt-5 mb-5" id="output">
             <div>
-                Canvas
+                
             </div>
-        </div>
+        </div> -->
     </div>
 </div>
 
-
-<script src="https://unpkg.com/gojs@2.2.5/release/go.js"></script>
-<p>
-  This is a minimalist HTML and JavaScript skeleton of the GoJS Sample
-  <a href="https://gojs.net/latest/samples/conceptMap.html">conceptMap.html</a>. It was automatically generated from a button on the sample page,
-  and does not contain the full HTML. It is intended as a starting point to adapt for your own usage.
-  For many samples, you may need to inspect the
-  <a href="https://github.com/NorthwoodsSoftware/GoJS/blob/master/samples/conceptMap.html">full source on Github</a>
-  and copy other files or scripts.
-</p>
-<div id="allSampleContent" class="p-4 w-full">
-  <script id="code">
-  function init() {
-
-    // Since 2.2 you can also author concise templates with method chaining instead of GraphObject.make
-    // For details, see https://gojs.net/latest/intro/buildingObjects.html
-    const $ = go.GraphObject.make;  // for conciseness in defining templates
-
-    myDiagram =
-      $(go.Diagram, "myDiagramDiv",  // must name or refer to the DIV HTML element
-        {
-          initialAutoScale: go.Diagram.Uniform,  // an initial automatic zoom-to-fit
-          contentAlignment: go.Spot.Center,  // align document to the center of the viewport
-          layout:
-            $(go.ForceDirectedLayout,  // automatically spread nodes apart
-              { maxIterations: 200, defaultSpringLength: 30, defaultElectricalCharge: 100 })
-        });
-
-    // define each Node's appearance
-    myDiagram.nodeTemplate =
-      $(go.Node, "Auto",  // the whole node panel
-        { locationSpot: go.Spot.Center },
-        // define the node's outer shape, which will surround the TextBlock
-        $(go.Shape, "Rectangle",
-          { fill: $(go.Brush, "Linear", { 0: "rgb(254, 201, 0)", 1: "rgb(254, 162, 0)" }), stroke: "black" }),
-        $(go.TextBlock,
-          { font: "bold 10pt helvetica, bold arial, sans-serif", margin: 4 },
-          new go.Binding("text", "text"))
-      );
-
-    // replace the default Link template in the linkTemplateMap
-    myDiagram.linkTemplate =
-      $(go.Link,  // the whole link panel
-        $(go.Shape,  // the link shape
-          { stroke: "black" }),
-        $(go.Shape,  // the arrowhead
-          { toArrow: "standard", stroke: null }),
-        $(go.Panel, "Auto",
-          $(go.Shape,  // the label background, which becomes transparent around the edges
-            {
-              fill: $(go.Brush, "Radial", { 0: "rgb(240, 240, 240)", 0.3: "rgb(240, 240, 240)", 1: "rgba(240, 240, 240, 0)" }),
-              stroke: null
-            }),
-          $(go.TextBlock,  // the label text
-            {
-              textAlign: "center",
-              font: "10pt helvetica, arial, sans-serif",
-              stroke: "#555555",
-              margin: 4
-            },
-            new go.Binding("text", "text"))
-        )
-      );
-
-    // create the model for the concept map
-    // fetch("http://127.0.0.1:8000/summarization").then((res)=>res.json()).then((data)=>console.log(data));
-    var new_data_edges= "{{ new_data_edges }}";
-    console.log(new_data_edges);
-    // var nodeDataArray = new_data_edges
-    // var linkDataArray = new_data_nodes
-    var nodeDataArray = [{'key': 28, 'text': 'improve'}, {'key': 19, 'text': 'keyword'}, {'key': 38, 'text': 'abolishing'}, {'key': 26, 'text': 'attempted'}, {'key': 40, 'text': 'Planning'}, {'key': 36, 'text': 'power'}, {'key': 30, 'text': 'efficiency'}, {'key': 34, 'text': 'has'}, {'key': 32, 'text': 'bureaucracy'}, {'key': 24, 'text': 'Modi'}, {'key': 42, 'text': 'Commission'}, {'key': 21, 'text': 'was minister'}, {'key': 43, 'text': 'frequency'}, {'key': 65, 'text': 'Gujarat'}, {'key': 49, 'text': 'Location'}, {'key': 66, 'text': 'Parliament'}, {'key': 55, 'text': 'Organization'}, {'key': 67, 'text': 'Varanasi'}, {'key': 50, 'text': 'the Bharatiya Janata Party'}, {'key': 52, 'text': 'RSS'}, {'key': 54, 'text': 'the Planning Commission'}];
-    var linkDataArray = [{'from': 28, 'to': 19}, {'from': 38, 'to': 19}, {'from': 26, 'to': 19}, {'from': 40, 'to': 19}, {'from': 36, 'to': 19}, {'from': 30, 'to': 19}, {'from': 34, 'to': 19}, {'from': 32, 'to': 19}, {'from': 24, 'to': 19}, {'from': 42, 'to': 19}, {'from': 24, 'to': 21}, {'from': 24, 'to': 26}, {'from': 24, 'to': 43}, {'from': 26, 'to': 43}, {'from': 28, 'to': 43}, {'from': 30, 'to': 43}, {'from': 32, 'to': 43}, {'from': 34, 'to': 43}, {'from': 36, 'to': 43}, {'from': 38, 'to': 43}, {'from': 40, 'to': 43}, {'from': 42, 'to': 43}, {'from': 66, 'to': 49}, {'from': 67, 'to': 55}, {'from': 65, 'to': 49}, {'from': 50, 'to': 55}, {'from': 52, 'to': 55}, {'from': 54, 'to': 55}, {'from': 65, 'to': 67}, {'from': 65, 'to': 66}, {'from': 67, 'to': 65}, {'from': 67, 'to': 66}, {'from': 66, 'to': 65}, {'from': 66, 'to': 67}];
-    myDiagram.model = new go.GraphLinksModel(nodeDataArray, linkDataArray);
-  }
-  window.addEventListener('DOMContentLoaded', init);
-</script>
-
-<div id="sample">
-<div id="myDiagramDiv" style="background-color: whitesmoke; border: 1px solid black; width: 100%; height: 700px; position: relative; -webkit-tap-highlight-color: rgba(255, 255, 255, 0);"><canvas tabindex="0" width="1317" height="872" style="position: absolute; top: 0px; left: 0px; z-index: 2; user-select: none; touch-action: none; width: 1054px; height: 698px;">This text is displayed if your browser does not support the Canvas HTML element.</canvas><div style="position: absolute; overflow: auto; width: 1054px; height: 698px; z-index: 1;"><div style="position: absolute; width: 1px; height: 1px;"></div></div></div>
-<p>
-  A concept map sample depicting various suggested relationships between different ideas.
-  See also the <a href="interactiveForce.html">Interactive Force</a> sample that uses the exact same data
-  but a different node template and an interactive <a href="../api/symbols/ForceDirectedLayout.html" target="api">ForceDirectedLayout</a>.
-</p>
-<p class="text-xs">GoJS version 2.2.5. Copyright 1998-2022 by Northwoods Software.</p></div>
-  <p><a href="https://github.com/NorthwoodsSoftware/GoJS/blob/master/samples/conceptMap.html" target="_blank">View this sample page's source on GitHub</a></p></div>
-
+<p id="new_data_edges" style="color:white;margin-bottom:-30px;">{{ new_data_edges }}</p>
+<p id="new_data_nodes"style="color:white;margin-bottom:-30px;">{{ new_data_nodes }}</p>
+<p id="para_summary" style="padding-left: 30px;padding-right: 30px;">{{ result }}</p>
 
 {% endblock content %}
+{% block pgjs %}
+<script>
+    document.getElementById("uploadBtn").onchange = function () {
+        document.getElementById("uploadFile").innerHTML = this.value;
+    };
+
+    var element = document.querySelector('nav');
+    console.log(element);
+    element.classList.add('blank-class');
+    element.classList.add('navbar-light'); 
+    element.classList.remove('navbar-dark'); 
+    console.log(element);
+    
+    // element.style.background = 'none';
+    // element.style.backdropFilter = null;
+    // var txtsum = document.getElementById("txtsum");
+    // txtsum.addEventListener('click',()=>{
+
+    // });
+
+    let ret = "{{ return }}";
+    console.log("ret");
+    console.log(ret);
+    
+</script>
+<script src="https://unpkg.com/gojs@2.2.5/release/go.js"></script>
+  <!-- <p>
+    This is a minimalist HTML and JavaScript skeleton of the GoJS Sample
+    <a href="https://gojs.net/latest/samples/conceptMap.html">conceptMap.html</a>. It was automatically generated from a button on the sample page,
+    and does not contain the full HTML. It is intended as a starting point to adapt for your own usage.
+    For many samples, you may need to inspect the
+    <a href="https://github.com/NorthwoodsSoftware/GoJS/blob/master/samples/conceptMap.html">full source on Github</a>
+    and copy other files or scripts.
+  </p> -->
+  <div id="allSampleContent" class="p-4 w-full">
+    <script id="code">
+    function init() {
+
+      // Since 2.2 you can also author concise templates with method chaining instead of GraphObject.make
+      // For details, see https://gojs.net/latest/intro/buildingObjects.html
+      const $ = go.GraphObject.make;  // for conciseness in defining templates
+
+      myDiagram =
+        $(go.Diagram, "myDiagramDiv",  // must name or refer to the DIV HTML element
+          {
+            initialAutoScale: go.Diagram.Uniform,  // an initial automatic zoom-to-fit
+            contentAlignment: go.Spot.Center,  // align document to the center of the viewport
+            layout:
+              $(go.ForceDirectedLayout,  // automatically spread nodes apart
+                { maxIterations: 200, defaultSpringLength: 30, defaultElectricalCharge: 100 })
+          });
+
+      // define each Node's appearance
+      myDiagram.nodeTemplate =
+        $(go.Node, "Auto",  // the whole node panel
+          { locationSpot: go.Spot.Center },
+          // define the node's outer shape, which will surround the TextBlock
+          $(go.Shape, "Rectangle",
+            { fill: $(go.Brush, "Linear", { 0: "rgb(254, 201, 0)", 1: "rgb(254, 162, 0)" }), stroke: "black" }),
+          $(go.TextBlock,
+            { font: "bold 10pt helvetica, bold arial, sans-serif", margin: 4 },
+            new go.Binding("text", "text"))
+        );
+
+      // replace the default Link template in the linkTemplateMap
+      myDiagram.linkTemplate =
+        $(go.Link,  // the whole link panel
+          $(go.Shape,  // the link shape
+            { stroke: "black" }),
+          $(go.Shape,  // the arrowhead
+            { toArrow: "standard", stroke: null }),
+          $(go.Panel, "Auto",
+            $(go.Shape,  // the label background, which becomes transparent around the edges
+              {
+                fill: $(go.Brush, "Radial", { 0: "rgb(240, 240, 240)", 0.3: "rgb(240, 240, 240)", 1: "rgba(240, 240, 240, 0)" }),
+                stroke: null
+              }),
+            $(go.TextBlock,  // the label text
+              {
+                textAlign: "center",
+                font: "10pt helvetica, arial, sans-serif",
+                stroke: "#555555",
+                margin: 4
+              },
+              new go.Binding("text", "text"))
+          )
+        );
+
+      // create the model for the concept map
+    //   var new_data_edges= "{{new_data_edges}}";
+    //   console.log(new_data_edges);
+      console.log("yeeeeeeeeeeeeeee");
+      let new_data_edges = document.getElementById("new_data_edges").innerHTML;
+    let new_data_nodes = document.getElementById("new_data_nodes").innerHTML;
+    // localStorage.setItem("new_data_edges",new_data_edges);
+    // localStorage.setItem("new_data_nodes",new_data_nodes);
+    console.log("new_data_edges");
+    console.log(new_data_edges);
+    console.log(new_data_nodes);
+    
+    var nodeDataArray ;
+    var linkDataArray;
+    // if(new_data_edges){
+    //     console.log("bruh");
+    //     nodeDataArray = JSON.parse(new_data_edges);
+    //     console.log(nodeDataArray);
+    //     linkDataArray = JSON.parse(new_data_nodes);
+    // }
+    nodeDataArray = JSON.parse(new_data_edges.replace(/'/g, '"'));
+    // nodeDataArray = JSON.parse(new_data_edges.rep.replace(/"/g, "'"));
+    // linkDataArray = JSON.parse(new_data_nodes.replace(/"/g, "'"));
+    linkDataArray = JSON.parse(new_data_nodes.replace(/'/g, '"'));
+      // var nodeDataArray = [{'key': 28, 'text': 'improve'}, {'key': 19, 'text': 'keyword'}, {'key': 38, 'text': 'abolishing'}, {'key': 26, 'text': 'attempted'}, {'key': 40, 'text': 'Planning'}, {'key': 36, 'text': 'power'}, {'key': 30, 'text': 'efficiency'}, {'key': 34, 'text': 'has'}, {'key': 32, 'text': 'bureaucracy'}, {'key': 24, 'text': 'Modi'}, {'key': 42, 'text': 'Commission'}, {'key': 21, 'text': 'was minister'}, {'key': 43, 'text': 'frequency'}, {'key': 65, 'text': 'Gujarat'}, {'key': 49, 'text': 'Location'}, {'key': 66, 'text': 'Parliament'}, {'key': 55, 'text': 'Organization'}, {'key': 67, 'text': 'Varanasi'}, {'key': 50, 'text': 'the Bharatiya Janata Party'}, {'key': 52, 'text': 'RSS'}, {'key': 54, 'text': 'the Planning Commission'}];
+      // var linkDataArray = [{'from': 28, 'to': 19}, {'from': 38, 'to': 19}, {'from': 26, 'to': 19}, {'from': 40, 'to': 19}, {'from': 36, 'to': 19}, {'from': 30, 'to': 19}, {'from': 34, 'to': 19}, {'from': 32, 'to': 19}, {'from': 24, 'to': 19}, {'from': 42, 'to': 19}, {'from': 24, 'to': 21}, {'from': 24, 'to': 26}, {'from': 24, 'to': 43}, {'from': 26, 'to': 43}, {'from': 28, 'to': 43}, {'from': 30, 'to': 43}, {'from': 32, 'to': 43}, {'from': 34, 'to': 43}, {'from': 36, 'to': 43}, {'from': 38, 'to': 43}, {'from': 40, 'to': 43}, {'from': 42, 'to': 43}, {'from': 66, 'to': 49}, {'from': 67, 'to': 55}, {'from': 65, 'to': 49}, {'from': 50, 'to': 55}, {'from': 52, 'to': 55}, {'from': 54, 'to': 55}, {'from': 65, 'to': 67}, {'from': 65, 'to': 66}, {'from': 67, 'to': 65}, {'from': 67, 'to': 66}, {'from': 66, 'to': 65}, {'from': 66, 'to': 67}];
+      myDiagram.model = new go.GraphLinksModel(nodeDataArray, linkDataArray);
+    }
+    window.addEventListener('DOMContentLoaded', init);
+  </script>
+
+<div id="sample">
+  <div id="myDiagramDiv" style="background-color: whitesmoke; border: 1px solid black; width: 100%; height: 700px; position: relative; -webkit-tap-highlight-color: rgba(255, 255, 255, 0);"><canvas tabindex="0" width="1317" height="872" style="position: absolute; top: 0px; left: 0px; z-index: 2; user-select: none; touch-action: none; width: 1054px; height: 698px;">This text is displayed if your browser does not support the Canvas HTML element.</canvas><div style="position: absolute; overflow: auto; width: 1054px; height: 698px; z-index: 1;"><div style="position: absolute; width: 1px; height: 1px;"></div></div></div>
+  <!-- <p>
+    A concept map sample depicting various suggested relationships between different ideas.
+    See also the <a href="interactiveForce.html">Interactive Force</a> sample that uses the exact same data
+    but a different node template and an interactive <a href="../api/symbols/ForceDirectedLayout.html" target="api">ForceDirectedLayout</a>.
+  </p> -->
+<!-- <p class="text-xs">GoJS version 2.2.5. Copyright 1998-2022 by Northwoods Software.</p></div> -->
+    <!-- <p><a href="https://github.com/NorthwoodsSoftware/GoJS/blob/master/samples/conceptMap.html" target="_blank">View this sample page's source on GitHub</a></p></div> -->
+
+{% endblock pgjs %}
