@@ -47,17 +47,6 @@ VISUAL TEXT SUMMARIZATION |In today's world people are not interested in reading
 - Also as most people would rather prefer a visual summary of the long paragraph to implement such a feature
 - To work with NLP
 
-## Steps
-
-1. Clone the repo.
-2. Create an env by ```virtualenv env```.
-3. Activate the env by ```.\env\Scripts\activate```.
-4. cd txtsumm/
-5. Run ```py manage.py makemigrations```
-6. Run ```py manage.py migrate```
-7. Run ```py manage.py runserver```
-8. 
-
 ## How it produces the results for Visual Summarization
 - For the basic summarization on long paragraphs [bert-extractive-summarizer](https://pypi.org/project/bert-extractive-summarizer/) librarby was used to produce accuracte results.
 - For the visual summarization use of Entity extraction along with text rank algorithm and [Relation Extraction](https://towardsdatascience.com/how-to-train-a-joint-entities-and-relation-extraction-classifier-using-bert-transformer-with-spacy-49eb08d91b5c) was used reference to the open sourced github code which was tweaked for personal usecase [here](https://github.com/BrambleXu/news-graph)
