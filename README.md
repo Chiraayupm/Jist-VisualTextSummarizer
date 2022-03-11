@@ -21,7 +21,7 @@
 - Tanya Chandnani
 
 ### Problem Statement
-VISUAL TEXT SUMMARIZATION |In today's world people are not interested in reading long articles or research papers hence, they use summarization tools, now there are many text summarization tools available in the market which are free to use as well as provide accurate summarizations.
+VISUAL TEXT SUMMARIZATION | In today's world people are not interested in reading long articles or research papers hence, they use summarization tools, now there are many text summarization tools available in the market which are free to use as well as provide accurate summarizations.
 
 ### Approach
 - Designing a Webapplication with minimilistic and sleek UI
@@ -37,9 +37,9 @@ VISUAL TEXT SUMMARIZATION |In today's world people are not interested in reading
 
 ## Tech-stack
 
-- HTML, CSS, BootStrap
+- HTML, CSS, Bootstrap
 - Django rest framework
-- spaCy, Tensorflow
+- SpaCy, Tensorflow
 
 ## Motivation?
 
@@ -48,8 +48,8 @@ VISUAL TEXT SUMMARIZATION |In today's world people are not interested in reading
 - To work with NLP
 
 ## How it produces the results for Visual Summarization
-- For the basic summarization on long paragraphs [bert-extractive-summarizer](https://pypi.org/project/bert-extractive-summarizer/) librarby was used to produce accuracte results.
-- For the visual summarization use of Entity extraction along with text rank algorithm and [Relation Extraction](https://towardsdatascience.com/how-to-train-a-joint-entities-and-relation-extraction-classifier-using-bert-transformer-with-spacy-49eb08d91b5c) was used reference to the open sourced github code which was tweaked for personal usecase [here](https://github.com/BrambleXu/news-graph)
+- For the basic summarization on long paragraphs [bert-extractive-summarizer](https://pypi.org/project/bert-extractive-summarizer/) library was used to produce accurate results.
+- For the visual summarization use of Entity extraction along with text rank algorithm and [Relation Extraction](https://towardsdatascience.com/how-to-train-a-joint-entities-and-relation-extraction-classifier-using-bert-transformer-with-spacy-49eb08d91b5c) was used as reference to the open sourced github code which was tweaked for personal usecase [here](https://github.com/BrambleXu/news-graph)
 
 
 ## Authors
