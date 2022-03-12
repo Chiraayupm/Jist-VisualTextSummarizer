@@ -51,13 +51,35 @@ VISUAL TEXT SUMMARIZATION | In today's world people are not interested in readin
 - For the basic summarization on long paragraphs [bert-extractive-summarizer](https://pypi.org/project/bert-extractive-summarizer/) library was used to produce accurate results.
 - For the visual summarization use of Entity extraction along with text rank algorithm and [Relation Extraction](https://towardsdatascience.com/how-to-train-a-joint-entities-and-relation-extraction-classifier-using-bert-transformer-with-spacy-49eb08d91b5c) was used as reference to the open sourced github code which was tweaked for personal usecase [here](https://github.com/BrambleXu/news-graph)
 
+## How it looks....
+<p align="center">
+    <img src="summarizer/static/assets/ps1.png" width="750" height="350"/>
+</p>
+<br/>
+<p align="center">
+    <img src="summarizer/static/assets/ps2.png" width="750" height="350"/>
+</p>
+<br/>
+<p align="center">
+    <img src="summarizer/static/assets/ps3.png" width="750" height="350"/>
+</p>
+<br/>
+<p align="center">
+    <img src="summarizer/static/assets/ps4.png" width="750" height="350"/>
+</p>
+<br/>
+<p align="center">
+    <img src="summarizer/static/assets/ps5.png" width="750" height="350"/>
+</p>
+<br/>
 
 ## Authors
 
 - **Chiraayu Meghnani**
     - [LinkedIn](http://www.linkedin.com/in/chiraayu-pravin) | [Gmail](mailto:chiraayupm@gmail.com) 
 - **Parth Cheulkar**
-    - [Linkedin](https://linkedin.com/in/parthcheulkar/) | [Gmail](pscheulkar12@gmail.com) | [Twitter](https://twitter.com/Parth_Vader__)
+    - [Linkedin](https://linkedin.com/in/parthcheulkar/) | [Gmail](mailto:pscheulkar12@gmail.com) | [Twitter](https://twitter.com/Parth_Vader__)
 - **Varun Mamtora**
     - [LinkedIn](https://www.linkedin.com/in/varun-mamtora-0b725b171/) | [Gmail](mailto:varunmamtora@gmail.com) | [Twitter](https://twitter.com/MamtoraVarun) | [Angel.co](https://angel.co/u/varun-mamtora)
 - **Tanya Chandnani**
+    - [Linkedin](https://www.linkedin.com/in/tanya-chandnani) | [Gmail](mailto:tanya.r.chandnani@gmail.com) | [Twitter](https://twitter.com/tanya_chandnani)
